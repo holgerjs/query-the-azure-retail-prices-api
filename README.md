@@ -1,9 +1,9 @@
 # Query the Azure Retail Rates Prices API
-This repository contains scripts (for now, only one) to query the Azure Retail Rates Prices API.
+This repository contains scripts/code for testing and learning how to query the Azure Retail Rates Prices API.
 
 The code is based upon the REST API that is [described here in full detail](https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices) [1].
 
-The preview API is not reflected so far, although it should be relatively easy to implement. The purpose of this repository and the code is to test and query Azure prices from the API.
+The preview API is not reflected so far, although it should be relatively easy to implement. The purpose of this repository and the code is to test and learn how to query Azure prices from the API.
 
 The sample code makes use of three libraries:
 - [`requests`](https://pypi.org/project/requests/), which is an HTTP library used to send HTTP/1.1 requests. [2]
