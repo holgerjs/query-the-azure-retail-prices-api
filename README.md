@@ -16,7 +16,7 @@ The versions with which the code samples were tested is contained in the [requir
 
 ## Samples
 
-Some code samples on how the `AzureRetailPricesApi` class could be used.
+Some code samples on how the `AzureRetailPricesClient` class could be used.
 
 ### Sample #1
 
