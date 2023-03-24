@@ -3,8 +3,8 @@
 #    Query the Azure Retail Prices API
 #    The class can be used like this (example):
 #
-#       from AzureRetailPricesApi import AzureRetailPricesApi
-#       api = AzureRetailPricesApi()
+#       from AzureRetailPricesApi import AzureRetailPricesClient
+#       api = AzureRetailPricesClient()
 #       api.format = 'table'
 #       api.return_values = ['currencyCode', 'unitOfMeasure', 'retailPrice', 'unitPrice', 'armRegionName', 'type', 'meterName', 'skuName', 'productName']
 #       data = api.query(armSkuName='Premium_SSD_Managed_Disk_P10', armRegionName='westeurope')
@@ -18,7 +18,7 @@ import requests
 import json
 from tabulate import tabulate
 
-class AzureRetailPricesApi:    
+class AzureRetailPricesClient:    
 
     # Init Function
     def __init__(
@@ -146,6 +146,6 @@ class AzureRetailPricesApi:
             return return_price_records
 
 if __name__ == '__main__':
-    from AzureRetailPricesApi import AzureRetailPricesApi
-    api = AzureRetailPricesApi()
+    from AzureRetailPricesApi import AzureRetailPricesClient
+    api = AzureRetailPricesClient()
     print(api)

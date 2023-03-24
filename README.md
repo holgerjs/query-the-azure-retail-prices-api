@@ -24,8 +24,8 @@ Some code samples on how the `AzureRetailPricesApi` class could be used.
 - Return them as dictionary
 
 ```python
-from AzureRetailPricesApi import AzureRetailPricesApi
-api = AzureRetailPricesApi()
+from AzureRetailPricesApi import AzureRetailPricesClient
+api = AzureRetailPricesClient()
 data = api.query(armSkuName='Premium_SSD_Managed_Disk_P10', armRegionName='westeurope')
 print(data)
 ```
@@ -42,8 +42,8 @@ Output:
 - Return them as json
 
 ```python
-from AzureRetailPricesApi import AzureRetailPricesApi
-api = AzureRetailPricesApi()
+from AzureRetailPricesApi import AzureRetailPricesClient
+api = AzureRetailPricesClient()
 api.format = 'json'
 data = api.query(armSkuName='Standard_M8ms', armRegionName='eastus', priceType='Reservation')
 print(data)
@@ -111,8 +111,8 @@ Output:
 - Return them as table
 
 ```python
-from AzureRetailPricesApi import AzureRetailPricesApi
-api = AzureRetailPricesApi()
+from AzureRetailPricesApi import AzureRetailPricesClient
+api = AzureRetailPricesClient()
 api.format = 'table'
 api.return_values = ['currencyCode', 'unitOfMeasure', 'retailPrice', 'unitPrice', 'armRegionName', 'type', 'meterName', 'skuName', 'productName']
 data = api.query(armSkuName='Standard_B2ms', armRegionName='southeastasia', priceType='Consumption', serviceFamily='Compute')
