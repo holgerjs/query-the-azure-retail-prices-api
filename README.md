@@ -28,7 +28,7 @@ Code samples include Python and PowerShell.
 
 ## Python Client
 
-The Python sample code makes use of three libraries:
+The Python sample code contained in the [AzureRetailPricesApi.py](AzureRetailPricesApi.py) file makes use of three libraries:
 - [`requests`](https://pypi.org/project/requests/), which is an HTTP library used to send HTTP/1.1 requests. [2]
 - [`tabulate`](https://pypi.org/project/tabulate/), which is a library to pretty-print tabular data in Python. [3]
 - [`json`](https://docs.python.org/3/library/json.html#module-json), which is a libary used to encode/decode data with JSON [4]
