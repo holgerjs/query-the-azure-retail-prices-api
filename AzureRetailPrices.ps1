@@ -67,6 +67,7 @@ function Get-AzureRetailPrice {
     $restMethod = 'GET'
     $response = $null
 
+    # Check if Parameters were passed and iterate through them in order to generate the filter query string
     if($PSBoundParameters.count -gt 0) {
         $PSBoundParameters.GetEnumerator() | ForEach-Object {
             if($PSBoundParameters.count -ne $parameterCounter) {
@@ -83,8 +84,10 @@ function Get-AzureRetailPrice {
         $filter = "?currencyCode='" + $currencyCode + "'"
     }
 
+    # Generate URL
     $requestUrl = $apiUrl + $filter
 
+    # Query REST API until no further NextPageLink is returned. This is required since the API returns only 100 results in one response.
     while ($requestUrl) {
         $temporaryResponse = Invoke-RestMethod -Method $restMethod -Uri $requestUrl
         $response += $temporaryResponse.Items
