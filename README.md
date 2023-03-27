@@ -392,3 +392,4 @@ Output:
 | 2    | Requests                     | https://pypi.org/project/requests/                                                                       |
 | 3    | python-tabulate              | https://pypi.org/project/tabulate/                                                                       |
 | 4    | json                         | https://docs.python.org/3/library/json.html#module-json                                                  |
+| 5    | API filters                  | https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices#api-filters |
