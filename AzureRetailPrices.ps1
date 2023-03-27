@@ -1,4 +1,31 @@
 function Get-AzureRetailPrice {
+    <#
+    .SYNOPSIS
+        Retrieve Azure Retail Prices from the Azure Retail Price API.
+    .DESCRIPTION
+        Query the Retail Rates Prices API to get retail prices for all Azure services.
+        Reference: https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices
+    .NOTES
+        The function parameters represent the filter values that are documented with the API: https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices#api-filters
+    .LINK
+        N/A
+    .EXAMPLE
+        Get-AzureRetailPrice -armSkuName Standard_B2ms -armRegionName southeastasia -priceType Consumption -serviceFamily Compute
+        
+        - List all _consumption_ prices for _Standard_B2ms_ VMs in the _Southeast Asia_ Azure Region
+        - Limit the output to certain properties
+    .EXAMPLE
+        Get-AzureRetailPrice -meterName 'P10 LRS Disk' -productName 'Premium SSD Managed Disks' | Select-Object location, meterName, unitOfMeasure, retailPrice | Sort-Object retailPrice -Descending
+
+        - List all prices for _P10 LRS Disks_ across all Azure Regions
+        - Limit the output to _location_, _meterName_, _unitOfMeasure_ and _retailPrice_
+        - Sort _descending_ by _retailPrice_
+    .EXAMPLE
+        Get-AzureRetailPrice -armSkuName Standard_M8ms -armRegionName eastus -priceType Reservation | ConvertTo-Json
+
+        - List all _reservation_ prices for _Standard_M8ms_ VMs in the _East US_ Azure Region
+        - Return them as json
+    #>    
     [CmdletBinding()]
     param (
         [Parameter(Mandatory = $False)]
